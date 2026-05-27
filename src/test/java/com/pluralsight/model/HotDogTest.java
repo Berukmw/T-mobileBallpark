@@ -63,5 +63,16 @@ public class HotDogTest {
         assertEquals(5.00, dog.getPrice());
     }
 
+    @Test
+    public void testDisplayName() {
+        HotDog dog = new HotDog(HotDogSize.JUMBO, HotDogType.BEEF);
+        assertEquals("Jumbo Beef Hot Dog", dog.getDisplayName());
+    }
 
+    @Test
+    public void testDisplayNameLoaded() {
+        HotDog dog = new HotDog(HotDogSize.FOOTLONG, HotDogType.CLASSIC);
+        dog.setLoaded(true);
+        assertEquals("Footlong Classic Hot Dog (Loaded)", dog.getDisplayName());
+    }
 }
