@@ -2,7 +2,7 @@ package com.pluralsight.model;
 
 public enum HotDogType {
     CLASSIC,
-    ALL_BEEF,
+    BEEF,
     TURKEY,
     VEGGIE
 }
