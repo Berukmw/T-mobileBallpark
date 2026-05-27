@@ -25,7 +25,7 @@ public class Main {
                             case 1:
                                 HotDog dog = hotDogScreen.buildHotDog();
                                 order.addItem(dog);
-                                System.out.println("Added to order!");
+                                System.out.println("Added to order! Enjoy the game!");
                                 break;
                             case 6:
                                 System.out.println(order.getOrderDetails());

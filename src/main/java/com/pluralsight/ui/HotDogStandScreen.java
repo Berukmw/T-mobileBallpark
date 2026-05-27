@@ -187,7 +187,12 @@ public class HotDogStandScreen {
         }
 
         // Show what they built
-        System.out.println("\n>>> " + dog.getDisplayName() + " - $" + String.format("%.2f", dog.getPrice()));
+        System.out.println("\n>>> " + dog.getDisplayName());
+        for (Topping t : dog.getToppings()) {
+            String extra = t.isExtra() ? " (Extra)" : "";
+            System.out.println("    - " + t.getName() + extra);
+        }
+        System.out.println("    Price: $" + String.format("%.2f", dog.getPrice()));
 
         return dog;
     }
