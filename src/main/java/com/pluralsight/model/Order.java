@@ -38,4 +38,23 @@ public class Order {
         }
         return total;
     }
+
+    public String getOrderDetails() {
+        String details = "";
+        details += "===== Order Summary =====\n";
+
+        for (int i = 0; i < items.size(); i++) {
+            Priceable item = items.get(i);
+            details += (i + 1) + ") ";
+            details += item.getDisplayName();
+            details += " - $";
+            details += String.format("%.2f", item.getPrice());
+            details += "\n";
+        }
+
+        details += "=========================\n";
+        details += "Total: $";
+        details += String.format("%.2f", getTotal());
+        return details;
+    }
 }
