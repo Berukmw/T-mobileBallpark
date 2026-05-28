@@ -15,11 +15,11 @@ public class VendorSelectScreen {
         System.out.println("========================================");
         System.out.println("1) Hot Dog Stand");
         System.out.println("2) Drink Stand");
-        System.out.println("3) Nacho Bar");
-        System.out.println("4) Dippin' Dots");
-        System.out.println("5) Snack Stand");
-        System.out.println("6) Checkout");
-        System.out.println("0) Cancel Order");
+        System.out.println("3) Dippin' Dots");
+        System.out.println("4) Snack Stand");
+        System.out.println("5) Team Store");
+        System.out.println("6) Check Text Messages");
+        System.out.println("0) Leave the Ballpark");
         System.out.println("========================================");
         System.out.print("Choose a vendor: ");
 

@@ -1,25 +1,30 @@
 package com.pluralsight.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
     private List<Priceable> items;
+    private List<String> vendors;
     private LocalDateTime orderDateTime;
 
     public Order() {
         this.items = new ArrayList<>();
+        this.vendors = new ArrayList<>();
         this.orderDateTime = LocalDateTime.now();
     }
 
-    public void addItem(Priceable item) {
+    public void addItem(Priceable item, String vendor) {
         items.add(item);
+        vendors.add(vendor);
     }
 
     public void removeItem(int index) {
         if (index >= 0 && index < items.size()) {
             items.remove(index);
+            vendors.remove(index);
         }
     }
 
@@ -27,8 +32,17 @@ public class Order {
         return items;
     }
 
+    public List<String> getVendors() {
+        return vendors;
+    }
+
     public LocalDateTime getOrderDateTime() {
         return orderDateTime;
+    }
+
+    public String getCaseNumber() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
+        return "TMB-" + orderDateTime.format(formatter);
     }
 
     public double getTotal() {
@@ -41,20 +55,17 @@ public class Order {
 
     public String getOrderDetails() {
         String details = "";
-        details += "===== Order Summary =====\n";
+        details += "===== T-Mobile Park Receipt =====\n";
 
         for (int i = 0; i < items.size(); i++) {
             Priceable item = items.get(i);
-            details += (i + 1) + ") ";
-            details += item.getDisplayName();
-            details += " - $";
-            details += String.format("%.2f", item.getPrice());
-            details += "\n";
+            details += vendors.get(i) + "\n";
+            details += "  " + item.getDisplayName();
+            details += " - $" + String.format("%.2f", item.getPrice()) + "\n";
         }
 
-        details += "=========================\n";
-        details += "Total: $";
-        details += String.format("%.2f", getTotal());
+        details += "=================================\n";
+        details += "Total Spent: $" + String.format("%.2f", getTotal()) + "\n";
         return details;
     }
 }
