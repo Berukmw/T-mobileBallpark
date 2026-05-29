@@ -8,12 +8,14 @@ public class HotDog implements Priceable {
     private HotDogType type;
     private List<Topping> toppings;
     private boolean loaded;
+    private String customName;
 
     public HotDog(HotDogSize size, HotDogType type) {
         this.size = size;
         this.type = type;
         this.toppings = new ArrayList<>();
         this.loaded = false;
+        this.customName = null;
     }
 
     public void addTopping(Topping topping) {
@@ -32,6 +34,10 @@ public class HotDog implements Priceable {
         return loaded;
     }
 
+    public void setCustomName(String customName) {
+        this.customName = customName;
+    }
+
     public HotDogSize getSize() {
         return size;
     }
@@ -48,14 +54,12 @@ public class HotDog implements Priceable {
     public double getPrice() {
         double total = 0.00;
 
-        // Base price by size
         switch (size) {
             case REGULAR:  total = 5.00; break;
             case FOOTLONG: total = 7.00; break;
             case JUMBO:    total = 9.00; break;
         }
 
-        // Add topping prices
         for (Topping topping : toppings) {
             total += topping.getPrice(size);
         }
@@ -72,12 +76,16 @@ public class HotDog implements Priceable {
             case JUMBO:    sizeName = "Jumbo"; break;
         }
 
+        if (customName != null) {
+            return sizeName + " " + customName;
+        }
+
         String typeName = "";
         switch (type) {
-            case CLASSIC:   typeName = "Classic"; break;
-            case BEEF:  typeName = "Beef"; break;
-            case TURKEY: typeName = "Turkey"; break;
-            case VEGGIE:    typeName = "Veggie"; break;
+            case CLASSIC: typeName = "Classic"; break;
+            case BEEF:    typeName = "Beef"; break;
+            case TURKEY:  typeName = "Turkey"; break;
+            case VEGGIE:  typeName = "Veggie"; break;
         }
 
         return sizeName + " " + typeName + " Hot Dog" + (loaded ? " (Loaded)" : "");

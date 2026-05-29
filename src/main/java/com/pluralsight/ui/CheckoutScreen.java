@@ -35,6 +35,14 @@ public class CheckoutScreen {
                 if (order.getVendors().get(i).equals(vendor)) {
                     Priceable item = order.getItems().get(i);
                     System.out.println("   " + item.getDisplayName() + "  $" + String.format("%.2f", item.getPrice()));
+
+                    if (item instanceof HotDog) {
+                        HotDog dog = (HotDog) item;
+                        for (Topping t : dog.getToppings()) {
+                            String extra = t.isExtra() ? " (Extra)" : "";
+                            System.out.println("     - " + t.getName() + extra);
+                        }
+                    }
                 }
             }
         }
@@ -50,7 +58,7 @@ public class CheckoutScreen {
         if (choice == 1) {
             receiptManager.saveReceipt(order);
             System.out.println("\nAll charges confirmed.");
-            System.out.println("Thanks for visiting T-Mobile Park");
+            System.out.println("Thanks for visiting T-Mobile Park! Enjoy the game!");
             return true;
         } else {
             return handleDispute(order, uniqueVendors);
@@ -90,7 +98,7 @@ public class CheckoutScreen {
             System.out.println("Please be a better human next time");
             System.out.println("and not waste our time.\n");
             receiptManager.saveReceipt(order);
-            System.out.println("Thanks for visiting T-Mobile Park!");
+            System.out.println("Thanks for visiting T-Mobile Park! Enjoy the game!");
             return true;
         } else {
             System.out.println("\nOrder cancelled.");

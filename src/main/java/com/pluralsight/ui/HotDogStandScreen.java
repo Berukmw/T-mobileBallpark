@@ -13,7 +13,7 @@ public class HotDogStandScreen {
     public HotDog buildHotDog() {
         System.out.println("\n--- Hot Dog Stand ---");
         System.out.println("1) Build Your Own");
-        System.out.println("2) Seattle Dog (cream cheese, grilled onions, jalapenos)");
+        System.out.println("2) Seattle Dog (cream cheese and grilled onions)");
         System.out.println("3) Polish Dog (turkey, sauerkraut, mustard, grilled onions)");
         System.out.print("Choice: ");
         int menuChoice = scanner.nextInt();
@@ -43,9 +43,9 @@ public class HotDogStandScreen {
         }
 
         HotDog dog = new HotDog(size, HotDogType.CLASSIC);
+        dog.setCustomName("Seattle Dog");
         dog.addTopping(new Topping("Cream Cheese", ToppingCategory.CHEESE, false));
         dog.addTopping(new Topping("Grilled Onions", ToppingCategory.REGULAR, false));
-        dog.addTopping(new Topping("Jalapenos", ToppingCategory.REGULAR, false));
         dog.setLoaded(true);
 
         System.out.println("\n>>> " + dog.getDisplayName());
@@ -75,6 +75,7 @@ public class HotDogStandScreen {
         }
 
         HotDog dog = new HotDog(size, HotDogType.TURKEY);
+        dog.setCustomName("Polish Dog");
         dog.addTopping(new Topping("Sauerkraut", ToppingCategory.REGULAR, false));
         dog.addTopping(new Topping("Mustard", ToppingCategory.SAUCE, false));
         dog.addTopping(new Topping("Grilled Onions", ToppingCategory.REGULAR, false));
@@ -124,7 +125,6 @@ public class HotDogStandScreen {
 
         HotDog dog = new HotDog(size, type);
 
-        // Premium Meats
         System.out.print("\nWould you like premium meats? (1=Yes, 2=No): ");
         int wantsMeat = scanner.nextInt();
         scanner.nextLine();
@@ -160,7 +160,6 @@ public class HotDogStandScreen {
             }
         }
 
-        // Cheese
         System.out.print("\nWould you like cheese? (1=Yes, 2=No): ");
         int wantsCheese = scanner.nextInt();
         scanner.nextLine();
@@ -196,7 +195,6 @@ public class HotDogStandScreen {
             }
         }
 
-        // Regular Toppings
         System.out.print("\nWould you like toppings? (1=Yes, 2=No): ");
         int wantsToppings = scanner.nextInt();
         scanner.nextLine();
@@ -225,7 +223,6 @@ public class HotDogStandScreen {
             }
         }
 
-        // Sauces
         System.out.print("\nWould you like sauces? (1=Yes, 2=No): ");
         int wantsSauces = scanner.nextInt();
         scanner.nextLine();
@@ -254,7 +251,6 @@ public class HotDogStandScreen {
             }
         }
 
-        // Loaded?
         System.out.print("\nMake it loaded? (grilled onions & peppers) (1=Yes, 2=No): ");
         int loadedChoice = scanner.nextInt();
         scanner.nextLine();
@@ -262,7 +258,6 @@ public class HotDogStandScreen {
             dog.setLoaded(true);
         }
 
-        // Show what they built
         System.out.println("\n>>> " + dog.getDisplayName());
         for (Topping t : dog.getToppings()) {
             String extra = t.isExtra() ? " (Extra)" : "";
