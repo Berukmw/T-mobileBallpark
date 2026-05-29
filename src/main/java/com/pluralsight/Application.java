@@ -47,7 +47,6 @@ public class Application {
             return;
         }
 
-        // Show ticket
         System.out.println("\n╔══════════════════════════════════════════════════════╗");
         System.out.println("║  T-MOBILE PARK              ||||| |||| ||||| ||||   ║");
         System.out.println("║  Seattle Mariners            |||| ||||| |||| |||||  ║");
@@ -84,7 +83,6 @@ public class Application {
         boolean gameStarted = false;
         boolean gameOver = false;
 
-        // Play ball!
         playAudio("playball.wav");
 
         while (ordering) {
@@ -92,28 +90,63 @@ public class Application {
 
             switch (vendor) {
                 case 1:
-                    HotDog dog = hotDogScreen.buildHotDog();
-                    order.addItem(dog, "Hot Dog Stand");
+                    boolean stayAtDogs = true;
+                    while (stayAtDogs) {
+                        HotDog dog = hotDogScreen.buildHotDog();
+                        if (dog != null) {
+                            order.addItem(dog, "Hot Dog Stand");
+                            System.out.println("Added to order!");
+                        }
+                        if (vendorPrompt("Hot Dog Stand") == 0) stayAtDogs = false;
+                    }
                     printSwipe();
                     break;
                 case 2:
-                    Drink drink = drinkScreen.buildDrink();
-                    order.addItem(drink, "Drink Stand");
+                    boolean stayAtDrinks = true;
+                    while (stayAtDrinks) {
+                        Drink drink = drinkScreen.buildDrink();
+                        if (drink != null) {
+                            order.addItem(drink, "Drink Stand");
+                            System.out.println("Added to order!");
+                        }
+                        if (vendorPrompt("Drink Stand") == 0) stayAtDrinks = false;
+                    }
                     printSwipe();
                     break;
                 case 3:
-                    Sides dots = dotsScreen.buildDippinDots();
-                    order.addItem(dots, "Dippin' Dots");
+                    boolean stayAtDots = true;
+                    while (stayAtDots) {
+                        Sides dots = dotsScreen.buildDippinDots();
+                        if (dots != null) {
+                            order.addItem(dots, "Dippin' Dots");
+                            System.out.println("Added to order!");
+                        }
+                        if (vendorPrompt("Dippin' Dots") == 0) stayAtDots = false;
+                    }
                     printSwipe();
                     break;
                 case 4:
-                    Sides snack = snackScreen.buildSide();
-                    order.addItem(snack, "Snack Stand");
+                    boolean stayAtSnacks = true;
+                    while (stayAtSnacks) {
+                        Sides snack = snackScreen.buildSide();
+                        if (snack != null) {
+                            order.addItem(snack, "Snack Stand");
+                            System.out.println("Added to order!");
+                        }
+                        if (vendorPrompt("Snack Stand") == 0) stayAtSnacks = false;
+                    }
                     printSwipe();
                     break;
                 case 5:
-                    Merchandise merch = teamStoreScreen.buildMerch();
-                    order.addItem(merch, "Team Store");
+                    boolean stayAtStore = true;
+                    while (stayAtStore) {
+                        Merchandise merch = teamStoreScreen.buildMerch();
+                        if (merch != null) {
+                            order.addItem(merch, "Team Store");
+                            System.out.println("Added to order!");
+                        }
+                        if (vendorPrompt("Team Store") == 0) stayAtStore = false;
+                    }
                     printSwipe();
                     break;
                 case 6:
@@ -135,9 +168,17 @@ public class Application {
                                 if (order.getItems().size() > 0) {
                                     System.out.println("While heading home you notice a text message...\n");
                                     System.out.println("1) Check Text Message");
-                                    System.out.print("Choice: ");
-                                    scanner.nextInt();
-                                    scanner.nextLine();
+                                    while (true) {
+                                        System.out.print("Choice: ");
+                                        try {
+                                            scanner.nextInt();
+                                            scanner.nextLine();
+                                            break;
+                                        } catch (Exception e) {
+                                            scanner.nextLine();
+                                            System.out.println("Please enter a number.");
+                                        }
+                                    }
                                     checkoutScreen.display(order);
                                 }
                                 ordering = false;
@@ -150,9 +191,17 @@ public class Application {
                             if (order.getItems().size() > 0) {
                                 System.out.println("While heading home you notice a text message...\n");
                                 System.out.println("1) Check Text Message");
-                                System.out.print("Choice: ");
-                                scanner.nextInt();
-                                scanner.nextLine();
+                                while (true) {
+                                    System.out.print("Choice: ");
+                                    try {
+                                        scanner.nextInt();
+                                        scanner.nextLine();
+                                        break;
+                                    } catch (Exception e) {
+                                        scanner.nextLine();
+                                        System.out.println("Please enter a number.");
+                                    }
+                                }
                                 checkoutScreen.display(order);
                             }
                             ordering = false;
@@ -174,6 +223,23 @@ public class Application {
             }
         }
         return true;
+    }
+
+    private int vendorPrompt(String vendorName) {
+        System.out.println("\n1) Order more from " + vendorName);
+        System.out.println("0) Leave " + vendorName);
+        while (true) {
+            System.out.print("Choice: ");
+            try {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                if (choice == 0 || choice == 1) return choice;
+                System.out.println("Invalid choice, try again.");
+            } catch (Exception e) {
+                scanner.nextLine();
+                System.out.println("Please enter a number.");
+            }
+        }
     }
 
     private void playAudio(String fileName) {

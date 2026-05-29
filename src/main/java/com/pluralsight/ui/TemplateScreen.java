@@ -10,23 +10,34 @@ public abstract class TemplateScreen {
     }
 
     protected int getInput(String prompt) {
-        System.out.print(prompt);
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-        return choice;
+        while (true) {
+            System.out.print(prompt);
+            try {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                return choice;
+            } catch (Exception e) {
+                scanner.nextLine();
+                System.out.println("Please enter a number.");
+            }
+        }
     }
 
     protected int getInput(String prompt, int min, int max) {
-        int choice = -1;
-        while (choice < min || choice > max) {
+        while (true) {
             System.out.print(prompt);
-            choice = scanner.nextInt();
-            scanner.nextLine();
-            if (choice < min || choice > max) {
+            try {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                if (choice >= min && choice <= max) {
+                    return choice;
+                }
                 System.out.println("Invalid choice, try again.");
+            } catch (Exception e) {
+                scanner.nextLine();
+                System.out.println("Please enter a number.");
             }
         }
-        return choice;
     }
 
     protected void printHeader(String title) {
