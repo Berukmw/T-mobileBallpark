@@ -11,9 +11,23 @@ public class HotDogStandScreen {
     }
 
     public HotDog buildHotDog() {
-        // Step 1: Pick size
         System.out.println("\n--- Hot Dog Stand ---");
-        System.out.println("Pick your size:");
+        System.out.println("1) Build Your Own");
+        System.out.println("2) Seattle Dog (cream cheese, grilled onions, jalapenos)");
+        System.out.println("3) Polish Dog (turkey, sauerkraut, mustard, grilled onions)");
+        System.out.print("Choice: ");
+        int menuChoice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (menuChoice) {
+            case 2: return buildSeattleDog();
+            case 3: return buildPolishDog();
+            default: return buildCustomDog();
+        }
+    }
+
+    private HotDog buildSeattleDog() {
+        System.out.println("\nPick your size:");
         System.out.println("1) Regular ($5.00)");
         System.out.println("2) Footlong ($7.00)");
         System.out.println("3) Jumbo ($9.00)");
@@ -28,7 +42,69 @@ public class HotDogStandScreen {
             default: size = HotDogSize.REGULAR; break;
         }
 
-        // Step 2: Pick type
+        HotDog dog = new HotDog(size, HotDogType.CLASSIC);
+        dog.addTopping(new Topping("Cream Cheese", ToppingCategory.CHEESE, false));
+        dog.addTopping(new Topping("Grilled Onions", ToppingCategory.REGULAR, false));
+        dog.addTopping(new Topping("Jalapenos", ToppingCategory.REGULAR, false));
+        dog.setLoaded(true);
+
+        System.out.println("\n>>> " + dog.getDisplayName());
+        for (Topping t : dog.getToppings()) {
+            String extra = t.isExtra() ? " (Extra)" : "";
+            System.out.println("    - " + t.getName() + extra);
+        }
+        System.out.println("    Price: $" + String.format("%.2f", dog.getPrice()));
+
+        return dog;
+    }
+
+    private HotDog buildPolishDog() {
+        System.out.println("\nPick your size:");
+        System.out.println("1) Regular ($5.00)");
+        System.out.println("2) Footlong ($7.00)");
+        System.out.println("3) Jumbo ($9.00)");
+        System.out.print("Choice: ");
+        int sizeChoice = scanner.nextInt();
+        scanner.nextLine();
+
+        HotDogSize size;
+        switch (sizeChoice) {
+            case 2:  size = HotDogSize.FOOTLONG; break;
+            case 3:  size = HotDogSize.JUMBO; break;
+            default: size = HotDogSize.REGULAR; break;
+        }
+
+        HotDog dog = new HotDog(size, HotDogType.TURKEY);
+        dog.addTopping(new Topping("Sauerkraut", ToppingCategory.REGULAR, false));
+        dog.addTopping(new Topping("Mustard", ToppingCategory.SAUCE, false));
+        dog.addTopping(new Topping("Grilled Onions", ToppingCategory.REGULAR, false));
+
+        System.out.println("\n>>> " + dog.getDisplayName());
+        for (Topping t : dog.getToppings()) {
+            String extra = t.isExtra() ? " (Extra)" : "";
+            System.out.println("    - " + t.getName() + extra);
+        }
+        System.out.println("    Price: $" + String.format("%.2f", dog.getPrice()));
+
+        return dog;
+    }
+
+    private HotDog buildCustomDog() {
+        System.out.println("\nPick your size:");
+        System.out.println("1) Regular ($5.00)");
+        System.out.println("2) Footlong ($7.00)");
+        System.out.println("3) Jumbo ($9.00)");
+        System.out.print("Choice: ");
+        int sizeChoice = scanner.nextInt();
+        scanner.nextLine();
+
+        HotDogSize size;
+        switch (sizeChoice) {
+            case 2:  size = HotDogSize.FOOTLONG; break;
+            case 3:  size = HotDogSize.JUMBO; break;
+            default: size = HotDogSize.REGULAR; break;
+        }
+
         System.out.println("\nPick your dog type:");
         System.out.println("1) Classic");
         System.out.println("2) Beef");
@@ -48,7 +124,7 @@ public class HotDogStandScreen {
 
         HotDog dog = new HotDog(size, type);
 
-        // Step 3: Premium Meats
+        // Premium Meats
         System.out.print("\nWould you like premium meats? (1=Yes, 2=No): ");
         int wantsMeat = scanner.nextInt();
         scanner.nextLine();
@@ -84,7 +160,7 @@ public class HotDogStandScreen {
             }
         }
 
-        // Step 4: Cheese
+        // Cheese
         System.out.print("\nWould you like cheese? (1=Yes, 2=No): ");
         int wantsCheese = scanner.nextInt();
         scanner.nextLine();
@@ -120,7 +196,7 @@ public class HotDogStandScreen {
             }
         }
 
-        // Step 5: Regular Toppings
+        // Regular Toppings
         System.out.print("\nWould you like toppings? (1=Yes, 2=No): ");
         int wantsToppings = scanner.nextInt();
         scanner.nextLine();
@@ -149,7 +225,7 @@ public class HotDogStandScreen {
             }
         }
 
-        // Step 6: Sauces
+        // Sauces
         System.out.print("\nWould you like sauces? (1=Yes, 2=No): ");
         int wantsSauces = scanner.nextInt();
         scanner.nextLine();
@@ -178,7 +254,7 @@ public class HotDogStandScreen {
             }
         }
 
-        // Step 7: Loaded?
+        // Loaded?
         System.out.print("\nMake it loaded? (grilled onions & peppers) (1=Yes, 2=No): ");
         int loadedChoice = scanner.nextInt();
         scanner.nextLine();
