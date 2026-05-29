@@ -9,9 +9,7 @@ public class VendorSelectScreen extends TemplateScreen {
     }
 
     public int display(int itemCount, boolean gameAvailable) {
-        System.out.println("\n========================================");
-        System.out.println("   Where would you like to go?");
-        System.out.println("========================================");
+        printHeader("Where would you like to go?");
         System.out.println("1) Hot Dog Stand");
         System.out.println("2) Drink Stand");
         System.out.println("3) Dippin' Dots");
@@ -25,10 +23,7 @@ public class VendorSelectScreen extends TemplateScreen {
         }
         System.out.println("0) Leave the Ballpark");
         System.out.println("========================================");
-        System.out.print("Choose a vendor: ");
 
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-        return choice;
+        return getInput("Choose a vendor: ", 0, 7);
     }
 }

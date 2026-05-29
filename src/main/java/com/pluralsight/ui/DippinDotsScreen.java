@@ -17,9 +17,7 @@ public class DippinDotsScreen extends TemplateScreen {
         System.out.println("3) Banana Split");
         System.out.println("4) Rainbow Ice");
         System.out.println("5) Mint Chocolate");
-        System.out.print("Choice: ");
-        int flavorChoice = scanner.nextInt();
-        scanner.nextLine();
+        int flavorChoice = getInput("Choice: ", 1, 5);
 
         String flavor;
         switch (flavorChoice) {
@@ -33,9 +31,7 @@ public class DippinDotsScreen extends TemplateScreen {
         System.out.println("\nPick your size:");
         System.out.println("1) Small ($4.50)");
         System.out.println("2) Large ($6.50)");
-        System.out.print("Choice: ");
-        int sizeChoice = scanner.nextInt();
-        scanner.nextLine();
+        int sizeChoice = getInput("Choice: ", 1, 2);
 
         String sizeName;
         double price;

@@ -19,9 +19,7 @@ public class DrinkStandScreen extends TemplateScreen {
         System.out.println("5) Lemonade");
         System.out.println("6) Iced Tea");
         System.out.println("7) Water ($2.00)");
-        System.out.print("Choice: ");
-        int drinkChoice = scanner.nextInt();
-        scanner.nextLine();
+        int drinkChoice = getInput("Choice: ", 1, 7);
 
         String flavor;
         switch (drinkChoice) {
@@ -34,7 +32,6 @@ public class DrinkStandScreen extends TemplateScreen {
             default: flavor = "Coca-Cola"; break;
         }
 
-        // Water is flat price, skip size
         if (flavor.equals("Water")) {
             Drink drink = new Drink(DrinkSize.SMALL, flavor);
             System.out.println("\n>>> " + drink.getDisplayName() + " - $" + String.format("%.2f", drink.getPrice()));
@@ -45,9 +42,7 @@ public class DrinkStandScreen extends TemplateScreen {
         System.out.println("1) Small ($3.00)");
         System.out.println("2) Medium ($4.00)");
         System.out.println("3) Large ($5.00)");
-        System.out.print("Choice: ");
-        int sizeChoice = scanner.nextInt();
-        scanner.nextLine();
+        int sizeChoice = getInput("Choice: ", 1, 3);
 
         DrinkSize size;
         switch (sizeChoice) {

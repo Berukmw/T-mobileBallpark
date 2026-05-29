@@ -32,7 +32,6 @@ public class GameScreen extends TemplateScreen {
             System.out.println("Inning " + inning + ": Mariners " + marinersScore + " - " + opponent + " " + opponentScore);
         }
 
-        // 7th inning stretch audio
         javax.sound.sampled.Clip clip = null;
         try {
             java.io.File audioFile = new java.io.File("stretch.wav");
@@ -53,9 +52,7 @@ public class GameScreen extends TemplateScreen {
         System.out.println("\n   Last call!");
         System.out.println("   1) Yeah let me wander");
         System.out.println("   2) Nah I'm staying in my seat");
-        System.out.print("   Choice: ");
-        int stretchChoice = scanner.nextInt();
-        scanner.nextLine();
+        int stretchChoice = getInput("   Choice: ", 1, 2);
 
         if (clip != null) {
             clip.stop();
@@ -98,9 +95,7 @@ public class GameScreen extends TemplateScreen {
             System.out.println("   Mariners " + marinersScore + " - " + opponent + " " + opponentScore);
             System.out.println("\n   1) Stay for extras");
             System.out.println("   0) Leave (you'll miss the ending!)");
-            System.out.print("   Choice: ");
-            int extraChoice = scanner.nextInt();
-            scanner.nextLine();
+            int extraChoice = getInput("   Choice: ", 0, 1);
 
             if (extraChoice == 0) {
                 marinersScore += random.nextInt(4) + 1;

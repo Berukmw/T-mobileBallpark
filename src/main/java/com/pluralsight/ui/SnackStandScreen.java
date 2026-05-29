@@ -15,19 +15,17 @@ public class SnackStandScreen extends TemplateScreen {
         System.out.println("2) Soft Pretzel ($5.00)");
         System.out.println("3) Peanuts ($4.00)");
         System.out.println("4) Cracker Jacks ($3.50)");
-        System.out.println("5) Ketel Corn ($6.00)");
-        System.out.println("6) Pop Corn ($5.00)");
-        System.out.print("Choice: ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        System.out.println("5) Kettle Corn ($4.50)");
+        System.out.println("6) Popcorn ($3.50)");
+        int choice = getInput("Choice: ", 1, 6);
 
         Sides side;
         switch (choice) {
             case 2:  side = new Sides("Soft Pretzel", 5.00); break;
             case 3:  side = new Sides("Peanuts", 4.00); break;
             case 4:  side = new Sides("Cracker Jacks", 3.50); break;
-            case 5:  side = new Sides("Ketel Corn", 6.00); break;
-            case 6:  side = new Sides("Pop Corn", 5.00); break;
+            case 5:  side = new Sides("Kettle Corn", 4.50); break;
+            case 6:  side = new Sides("Popcorn", 3.50); break;
             default: side = new Sides("Garlic Fries", 6.00); break;
         }
 

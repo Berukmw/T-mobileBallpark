@@ -29,10 +29,7 @@ public class HomeScreen extends TemplateScreen {
         System.out.println("  ╚════════════════════════════════════════════════════╝" + RESET);
         System.out.println("  1) Scan Ticket and Enter");
         System.out.println("  0) Exit");
-        System.out.print("  Choice: ");
 
-        int choice = scanner.nextInt();
-        scanner.nextLine();
-        return choice;
+        return getInput("  Choice: ", 0, 1);
     }
 }

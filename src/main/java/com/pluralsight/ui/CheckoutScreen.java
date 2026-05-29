@@ -50,9 +50,7 @@ public class CheckoutScreen extends TemplateScreen {
         System.out.println("\n Were these transactions made by you?");
         System.out.println(" 1) Yes, that was me");
         System.out.println(" 0) No, someone robbed me!");
-        System.out.print("\n Choice: ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = getInput("\n Choice: ", 0, 1);
 
         if (choice == 1) {
             receiptManager.saveReceipt(order);
@@ -82,9 +80,7 @@ public class CheckoutScreen extends TemplateScreen {
 
         System.out.println(" 1) Jk it was me lol");
         System.out.println(" 0) Exit");
-        System.out.print("\n Choice: ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = getInput("\n Choice: ", 0, 1);
 
         if (choice == 1) {
             System.out.println("\n... We figured.\n");

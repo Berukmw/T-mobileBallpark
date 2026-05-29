@@ -15,9 +15,7 @@ public class TeamStoreScreen extends TemplateScreen {
         System.out.println("2) Hat ($34.99)");
         System.out.println("3) Sticker ($5.99)");
         System.out.println("4) Ball Boy Baseball ($12.99)");
-        System.out.print("Choice: ");
-        int choice = scanner.nextInt();
-        scanner.nextLine();
+        int choice = getInput("Choice: ", 1, 4);
 
         switch (choice) {
             case 1: return buildJersey();
@@ -33,9 +31,7 @@ public class TeamStoreScreen extends TemplateScreen {
         System.out.println("2) Medium");
         System.out.println("3) Large");
         System.out.println("4) XL");
-        System.out.print("Choice: ");
-        int sizeChoice = scanner.nextInt();
-        scanner.nextLine();
+        int sizeChoice = getInput("Choice: ", 1, 4);
 
         String size;
         switch (sizeChoice) {
@@ -51,16 +47,14 @@ public class TeamStoreScreen extends TemplateScreen {
         System.out.println("3) Ichiro Suzuki #51");
         System.out.println("4) Ken Griffey Jr. #24");
         System.out.println("5) Yoel Weldeselassie #00");
-        System.out.print("Choice: ");
-        int playerChoice = scanner.nextInt();
-        scanner.nextLine();
+        int playerChoice = getInput("Choice: ", 1, 5);
 
         String player;
         switch (playerChoice) {
             case 2:  player = "Raleigh #29"; break;
             case 3:  player = "Ichiro #51"; break;
             case 4:  player = "Griffey Jr. #24"; break;
-            case 5:  player = "Yoel #00"; break;
+            case 5:  player = "Weldeselassie #00"; break;
             default: player = "Rodriguez #44"; break;
         }
 
@@ -74,9 +68,7 @@ public class TeamStoreScreen extends TemplateScreen {
         System.out.println("1) Classic Navy");
         System.out.println("2) Teal Alternate");
         System.out.println("3) City Connect");
-        System.out.print("Choice: ");
-        int styleChoice = scanner.nextInt();
-        scanner.nextLine();
+        int styleChoice = getInput("Choice: ", 1, 3);
 
         String style;
         switch (styleChoice) {
@@ -91,19 +83,68 @@ public class TeamStoreScreen extends TemplateScreen {
     }
 
     private Merchandise buildSticker() {
+        String TEAL = "\033[36m";
+        String NAVY = "\033[34m";
+        String WHITE = "\033[1;37m";
+        String YELLOW = "\033[1;33m";
+        String GREEN = "\033[32m";
+        String RESET = "\033[0m";
+
         System.out.println("\nPick your sticker:");
         System.out.println("1) Mariners Logo");
         System.out.println("2) Trident");
         System.out.println("3) Moose");
-        System.out.print("Choice: ");
-        int stickerChoice = scanner.nextInt();
-        scanner.nextLine();
+        System.out.println("4) Go M's");
+        System.out.println("5) Compass");
+        int stickerChoice = getInput("Choice: ", 1, 5);
 
         String sticker;
         switch (stickerChoice) {
-            case 2:  sticker = "Trident"; break;
-            case 3:  sticker = "Moose"; break;
-            default: sticker = "Mariners Logo"; break;
+            case 1:
+                sticker = "Mariners Logo";
+                System.out.println(TEAL + "  ╔═══════════════╗");
+                System.out.println("  ║   " + WHITE + "S E A" + TEAL + "       ║");
+                System.out.println("  ║     " + YELLOW + "⚓" + TEAL + "         ║");
+                System.out.println("  ║  " + NAVY + "MARINERS" + TEAL + "      ║");
+                System.out.println("  ╚═══════════════╝" + RESET);
+                break;
+            case 2:
+                sticker = "Trident";
+                System.out.println(TEAL + "  ╔═══════════════╗");
+                System.out.println("  ║  " + YELLOW + "\\  |  /" + TEAL + "      ║");
+                System.out.println("  ║   " + YELLOW + "\\ | /" + TEAL + "       ║");
+                System.out.println("  ║    " + YELLOW + "\\|/" + TEAL + "        ║");
+                System.out.println("  ║     " + YELLOW + "|" + TEAL + "         ║");
+                System.out.println("  ╚═══════════════╝" + RESET);
+                break;
+            case 3:
+                sticker = "Moose";
+                System.out.println(GREEN + "  ╔═══════════════╗");
+                System.out.println("  ║  " + YELLOW + "\\/    \\/" + GREEN + "     ║");
+                System.out.println("  ║   " + YELLOW + "\\    /" + GREEN + "      ║");
+                System.out.println("  ║   " + YELLOW + "(o  o)" + GREEN + "      ║");
+                System.out.println("  ║    " + YELLOW + "\\  /" + GREEN + "       ║");
+                System.out.println("  ║   " + WHITE + "MOOSE" + GREEN + "       ║");
+                System.out.println("  ╚═══════════════╝" + RESET);
+                break;
+            case 4:
+                sticker = "Go M's";
+                System.out.println(NAVY + "  ╔═══════════════╗");
+                System.out.println("  ║  " + WHITE + "GO M's!" + NAVY + "      ║");
+                System.out.println("  ║    " + TEAL + "⚾ ⚾" + NAVY + "       ║");
+                System.out.println("  ║  " + TEAL + "SEA 2026" + NAVY + "      ║");
+                System.out.println("  ╚═══════════════╝" + RESET);
+                break;
+            default:
+                sticker = "Compass";
+                System.out.println(TEAL + "  ╔═══════════════╗");
+                System.out.println("  ║      " + WHITE + "N" + TEAL + "        ║");
+                System.out.println("  ║      " + WHITE + "|" + TEAL + "        ║");
+                System.out.println("  ║  " + WHITE + "W---" + YELLOW + "*" + WHITE + "---E" + TEAL + "    ║");
+                System.out.println("  ║      " + WHITE + "|" + TEAL + "        ║");
+                System.out.println("  ║      " + WHITE + "S" + TEAL + "        ║");
+                System.out.println("  ╚═══════════════╝" + RESET);
+                break;
         }
 
         Merchandise stickerItem = new Merchandise(sticker + " Sticker", "", 5.99);

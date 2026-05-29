@@ -163,7 +163,7 @@ public class Application {
                 case 0:
                     System.out.println("\nYou left T-Mobile Park early.");
                     System.out.println("On your way out, you dropped your credit card!");
-                    System.out.println("Someone picked it up and put a charge of $420.00");
+                    System.out.println("Someone picked it up and put a charge of $67.00");
                     System.out.println("on your account ending in **4287!\n");
                     System.out.println("Don't worry, Chase Bank has reversed all charges");
                     System.out.println("and cancelled your card.");
