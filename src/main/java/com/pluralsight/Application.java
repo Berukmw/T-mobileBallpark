@@ -33,10 +33,8 @@ public class Application {
         Schedule schedule = new Schedule();
         schedule.loadFromCSV("mariners_schedule.csv");
 
-        System.out.println("========================================");
-        System.out.println("   Welcome to T-Mobile Park!");
-        System.out.println("   Seattle Mariners 2026 Season");
-        System.out.println("========================================");
+        System.out.println("\n   Seattle Mariners 2026 Season");
+        System.out.println("   Loading...\n");
         System.out.print("What date are you visiting? (MM-DD): ");
         String dateInput = scanner.nextLine();
 
@@ -49,11 +47,15 @@ public class Application {
             return;
         }
 
-        System.out.println("\n========================================");
-        System.out.println("   TODAY'S GAME");
-        System.out.println("   Mariners vs " + matchup.getOpponent());
-        System.out.println("   " + matchup.getHomeAway() + " | " + matchup.getTime());
-        System.out.println("========================================");
+        // Show ticket
+        System.out.println("\n╔══════════════════════════════════════════════════════╗");
+        System.out.println("║  T-MOBILE PARK              ||||| |||| ||||| ||||   ║");
+        System.out.println("║  Seattle Mariners            |||| ||||| |||| |||||  ║");
+        System.out.println("║  vs " + String.format("%-25s", matchup.getOpponent()) + " ||||| |||| ||||| ||||   ║");
+        System.out.println("║                              |||| ||||| |||| |||||  ║");
+        System.out.println("║  " + matchup.getHomeAway() + " | " + String.format("%-22s", matchup.getTime()) + "||||| |||| ||||| ||||   ║");
+        System.out.println("║  2026 Season                 |||| ||||| |||| |||||  ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝");
 
         boolean running = true;
         while (running) {
@@ -81,6 +83,9 @@ public class Application {
         boolean ordering = true;
         boolean gameStarted = false;
         boolean gameOver = false;
+
+        // Play ball!
+        playAudio("playball.wav");
 
         while (ordering) {
             int vendor = vendorScreen.display(order.getItems().size(), !gameOver);
@@ -128,7 +133,11 @@ public class Application {
                                 gameOver = true;
                                 System.out.println("\nThe game is over!");
                                 if (order.getItems().size() > 0) {
-                                    System.out.println("You have a new text message...\n");
+                                    System.out.println("While heading home you notice a text message...\n");
+                                    System.out.println("1) Check Text Message");
+                                    System.out.print("Choice: ");
+                                    scanner.nextInt();
+                                    scanner.nextLine();
                                     checkoutScreen.display(order);
                                 }
                                 ordering = false;
@@ -139,7 +148,11 @@ public class Application {
                             gameOver = true;
                             System.out.println("\nThe game is over!");
                             if (order.getItems().size() > 0) {
-                                System.out.println("You have a new text message...\n");
+                                System.out.println("While heading home you notice a text message...\n");
+                                System.out.println("1) Check Text Message");
+                                System.out.print("Choice: ");
+                                scanner.nextInt();
+                                scanner.nextLine();
                                 checkoutScreen.display(order);
                             }
                             ordering = false;
@@ -161,6 +174,20 @@ public class Application {
             }
         }
         return true;
+    }
+
+    private void playAudio(String fileName) {
+        try {
+            java.io.File audioFile = new java.io.File(fileName);
+            if (audioFile.exists()) {
+                javax.sound.sampled.AudioInputStream audio = javax.sound.sampled.AudioSystem.getAudioInputStream(audioFile);
+                javax.sound.sampled.Clip clip = javax.sound.sampled.AudioSystem.getClip();
+                clip.open(audio);
+                clip.start();
+            }
+        } catch (Exception e) {
+            // No audio, no problem
+        }
     }
 
     private void printSwipe() {

@@ -24,7 +24,6 @@ public class GameScreen {
         System.out.println("   Mariners vs " + opponent);
         System.out.println("========================================");
 
-        // Innings 1-7
         for (int inning = 1; inning <= 7; inning++) {
             int marinersRuns = random.nextInt(3);
             int opponentRuns = random.nextInt(3);
@@ -34,17 +33,35 @@ public class GameScreen {
             System.out.println("Inning " + inning + ": Mariners " + marinersScore + " - " + opponent + " " + opponentScore);
         }
 
-        // 7th inning stretch
+        // 7th inning stretch audio
+        javax.sound.sampled.Clip clip = null;
+        try {
+            java.io.File audioFile = new java.io.File("stretch.wav");
+            if (audioFile.exists()) {
+                javax.sound.sampled.AudioInputStream audio = javax.sound.sampled.AudioSystem.getAudioInputStream(audioFile);
+                clip = javax.sound.sampled.AudioSystem.getClip();
+                clip.open(audio);
+                clip.start();
+            }
+        } catch (Exception e) {
+            // No audio, no problem
+        }
+
         System.out.println("\n========================================");
         System.out.println("   7th INNING STRETCH!");
         System.out.println("========================================");
         System.out.println("   Mariners " + marinersScore + " - " + opponent + " " + opponentScore);
-        System.out.println("\n   Last call! ");
-        System.out.println("   1) Yeah let wander");
+        System.out.println("\n   Last call!");
+        System.out.println("   1) Yeah let me wander");
         System.out.println("   2) Nah I'm staying in my seat");
         System.out.print("   Choice: ");
         int stretchChoice = scanner.nextInt();
         scanner.nextLine();
+
+        if (clip != null) {
+            clip.stop();
+            clip.close();
+        }
 
         if (stretchChoice == 1) {
             this.savedMarinersScore = marinersScore;
@@ -66,7 +83,6 @@ public class GameScreen {
         System.out.println("   Back to the game!");
         System.out.println("========================================");
 
-        // Innings 8-9
         for (int inning = 8; inning <= 9; inning++) {
             int marinersRuns = random.nextInt(3);
             int opponentRuns = random.nextInt(3);
@@ -76,7 +92,6 @@ public class GameScreen {
             System.out.println("Inning " + inning + ": Mariners " + marinersScore + " - " + opponent + " " + opponentScore);
         }
 
-        // Handle tie
         if (marinersScore == opponentScore) {
             System.out.println("\n========================================");
             System.out.println("   TIE GAME! EXTRA INNINGS!");
@@ -111,7 +126,6 @@ public class GameScreen {
             }
         }
 
-        // Mariners always win
         if (opponentScore >= marinersScore) {
             marinersScore = opponentScore + random.nextInt(3) + 1;
         }

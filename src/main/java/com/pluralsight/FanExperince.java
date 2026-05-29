@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-public class Main {
+public class FanExperince {
     public static void main(String[] args) {
         Application app = new Application();
         app.run();

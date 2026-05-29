@@ -50,7 +50,7 @@ public class CheckoutScreen {
         if (choice == 1) {
             receiptManager.saveReceipt(order);
             System.out.println("\nAll charges confirmed.");
-            System.out.println("Thanks for visiting T-Mobile Park! Enjoy the game!");
+            System.out.println("Thanks for visiting T-Mobile Park");
             return true;
         } else {
             return handleDispute(order, uniqueVendors);
@@ -90,7 +90,7 @@ public class CheckoutScreen {
             System.out.println("Please be a better human next time");
             System.out.println("and not waste our time.\n");
             receiptManager.saveReceipt(order);
-            System.out.println("Thanks for visiting T-Mobile Park! Enjoy the game!");
+            System.out.println("Thanks for visiting T-Mobile Park!");
             return true;
         } else {
             System.out.println("\nOrder cancelled.");
