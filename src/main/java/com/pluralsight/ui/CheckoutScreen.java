@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CheckoutScreen {
-    private Scanner scanner;
+public class CheckoutScreen extends TemplateScreen {
     private ReceiptManager receiptManager;
 
     public CheckoutScreen(Scanner scanner, ReceiptManager receiptManager) {
-        this.scanner = scanner;
+        super(scanner);
         this.receiptManager = receiptManager;
     }
 

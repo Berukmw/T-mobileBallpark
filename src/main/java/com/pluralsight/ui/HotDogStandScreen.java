@@ -3,11 +3,10 @@ package com.pluralsight.ui;
 import com.pluralsight.model.*;
 import java.util.Scanner;
 
-public class HotDogStandScreen {
-    private Scanner scanner;
+public class HotDogStandScreen extends TemplateScreen {
 
     public HotDogStandScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public HotDog buildHotDog() {

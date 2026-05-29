@@ -2,11 +2,10 @@ package com.pluralsight.ui;
 
 import java.util.Scanner;
 
-public class VendorSelectScreen {
-    private Scanner scanner;
+public class VendorSelectScreen extends TemplateScreen {
 
     public VendorSelectScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public int display(int itemCount, boolean gameAvailable) {

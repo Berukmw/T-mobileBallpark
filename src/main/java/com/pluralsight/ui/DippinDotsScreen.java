@@ -3,11 +3,10 @@ package com.pluralsight.ui;
 import com.pluralsight.model.*;
 import java.util.Scanner;
 
-public class DippinDotsScreen {
-    private Scanner scanner;
+public class DippinDotsScreen extends TemplateScreen {
 
     public DippinDotsScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public Sides buildDippinDots() {

@@ -2,11 +2,10 @@ package com.pluralsight.ui;
 
 import java.util.Scanner;
 
-public class HomeScreen {
-    private Scanner scanner;
+public class HomeScreen extends TemplateScreen {
 
     public HomeScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public int display() {

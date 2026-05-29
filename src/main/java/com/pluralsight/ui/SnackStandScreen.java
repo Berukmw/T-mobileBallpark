@@ -3,11 +3,10 @@ package com.pluralsight.ui;
 import com.pluralsight.model.*;
 import java.util.Scanner;
 
-public class SnackStandScreen {
-    private Scanner scanner;
+public class SnackStandScreen extends TemplateScreen {
 
     public SnackStandScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public Sides buildSide() {

@@ -3,11 +3,10 @@ package com.pluralsight.ui;
 import com.pluralsight.model.*;
 import java.util.Scanner;
 
-public class TeamStoreScreen {
-    private Scanner scanner;
+public class TeamStoreScreen extends TemplateScreen {
 
     public TeamStoreScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
     }
 
     public Merchandise buildMerch() {

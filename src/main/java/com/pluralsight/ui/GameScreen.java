@@ -3,15 +3,14 @@ package com.pluralsight.ui;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GameScreen {
-    private Scanner scanner;
+public class GameScreen extends TemplateScreen {
     private Random random;
     private int savedMarinersScore;
     private int savedOpponentScore;
     private String savedOpponent;
 
     public GameScreen(Scanner scanner) {
-        this.scanner = scanner;
+        super(scanner);
         this.random = new Random();
     }
 
