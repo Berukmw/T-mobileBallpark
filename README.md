@@ -1,6 +1,6 @@
 # T-Mobile Ballpark
 
-A point-of-sale application themed around the T-Mobile Park ballpark experience for the Seattle Mariners 2026 season.
+A point-of-sale application themed around the T-Mobile Park ballpark fan experience for the Seattle Mariners 2026 season.
 
 ## How to Run
 
