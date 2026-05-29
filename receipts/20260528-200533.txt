@@ -1,0 +1,11 @@
+===== T-Mobile Park Receipt =====
+Hot Dog Stand
+  Footlong Classic Hot Dog (Loaded) - $8.50
+Drink Stand
+  Large Fanta - $5.00
+Snack Stand
+  Garlic Fries - $6.00
+Team Store
+  XL Yoel #00 Jersey - $149.99
+=================================
+Total Spent: $169.49

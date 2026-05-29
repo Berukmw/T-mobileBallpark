@@ -1,0 +1,159 @@
+date,opponent,home_away,time
+03-26,Cleveland Guardians,Home,7:10 PM
+03-27,Cleveland Guardians,Home,6:40 PM
+03-28,Cleveland Guardians,Home,6:40 PM
+03-29,Cleveland Guardians,Home,1:10 PM
+03-30,New York Yankees,Home,6:40 PM
+03-31,New York Yankees,Home,6:40 PM
+04-01,New York Yankees,Home,1:10 PM
+04-03,Los Angeles Angels,Away,6:38 PM
+04-04,Los Angeles Angels,Away,6:38 PM
+04-05,Los Angeles Angels,Away,1:07 PM
+04-06,Athletics,Away,5:05 PM
+04-07,Athletics,Away,5:05 PM
+04-08,Athletics,Away,12:35 PM
+04-10,Chicago White Sox,Home,7:10 PM
+04-11,Chicago White Sox,Home,6:40 PM
+04-12,Chicago White Sox,Home,1:10 PM
+04-13,Chicago White Sox,Home,1:10 PM
+04-14,Houston Astros,Home,7:10 PM
+04-15,Houston Astros,Home,7:10 PM
+04-16,Houston Astros,Away,5:40 PM
+04-17,Texas Rangers,Home,7:10 PM
+04-18,Texas Rangers,Home,4:15 PM
+04-19,Texas Rangers,Home,1:10 PM
+04-20,Minnesota Twins,Home,6:40 PM
+04-21,Minnesota Twins,Home,6:40 PM
+04-22,Minnesota Twins,Home,1:10 PM
+04-24,Tampa Bay Rays,Away,5:15 PM
+04-25,Tampa Bay Rays,Away,11:15 AM
+04-26,Tampa Bay Rays,Away,11:15 AM
+04-27,Minnesota Twins,Away,4:40 PM
+04-28,Minnesota Twins,Away,4:40 PM
+04-29,Minnesota Twins,Away,10:40 AM
+05-01,Detroit Tigers,Home,7:10 PM
+05-02,Detroit Tigers,Home,6:40 PM
+05-03,Detroit Tigers,Home,1:10 PM
+05-04,Toronto Blue Jays,Home,6:40 PM
+05-05,Toronto Blue Jays,Home,6:40 PM
+05-06,Toronto Blue Jays,Home,1:10 PM
+05-08,Chicago White Sox,Away,4:40 PM
+05-09,Chicago White Sox,Away,4:10 PM
+05-10,Chicago White Sox,Away,11:10 AM
+05-11,Baltimore Orioles,Away,5:10 PM
+05-12,Baltimore Orioles,Away,5:10 PM
+05-13,Baltimore Orioles,Away,5:10 PM
+05-15,Houston Astros,Home,7:10 PM
+05-16,Houston Astros,Home,6:40 PM
+05-17,Houston Astros,Home,1:10 PM
+05-18,Los Angeles Angels,Home,6:40 PM
+05-19,Los Angeles Angels,Home,6:40 PM
+05-20,Los Angeles Angels,Home,1:10 PM
+05-22,Athletics,Home,7:10 PM
+05-23,Athletics,Home,6:40 PM
+05-24,Athletics,Home,1:10 PM
+05-25,San Diego Padres,Away,1:10 PM
+05-26,San Diego Padres,Away,6:40 PM
+05-27,San Diego Padres,Away,1:10 PM
+05-29,Arizona Diamondbacks,Home,7:10 PM
+05-30,Arizona Diamondbacks,Home,6:40 PM
+05-31,Arizona Diamondbacks,Home,1:10 PM
+06-01,Texas Rangers,Away,11:35 AM
+06-02,Texas Rangers,Away,5:05 PM
+06-03,Texas Rangers,Away,5:05 PM
+06-05,Los Angeles Dodgers,Home,7:10 PM
+06-06,Los Angeles Dodgers,Home,6:40 PM
+06-07,Los Angeles Dodgers,Home,1:10 PM
+06-08,San Francisco Giants,Home,6:40 PM
+06-09,San Francisco Giants,Home,6:40 PM
+06-10,San Francisco Giants,Home,1:10 PM
+06-12,Colorado Rockies,Away,5:40 PM
+06-13,Colorado Rockies,Away,6:10 PM
+06-14,Colorado Rockies,Away,1:10 PM
+06-15,Houston Astros,Away,11:10 AM
+06-16,Houston Astros,Away,5:10 PM
+06-17,Houston Astros,Away,5:10 PM
+06-19,Boston Red Sox,Home,7:10 PM
+06-20,Boston Red Sox,Home,1:10 PM
+06-21,Boston Red Sox,Home,1:10 PM
+06-22,Kansas City Royals,Home,6:40 PM
+06-23,Kansas City Royals,Home,6:40 PM
+06-24,Kansas City Royals,Home,1:10 PM
+06-26,Athletics,Away,6:40 PM
+06-27,Athletics,Away,1:07 PM
+06-28,Athletics,Away,1:07 PM
+06-29,Los Angeles Angels,Home,6:40 PM
+06-30,Los Angeles Angels,Home,6:40 PM
+07-02,Los Angeles Angels,Home,7:10 PM
+07-03,St. Louis Cardinals,Home,7:10 PM
+07-04,St. Louis Cardinals,Home,1:10 PM
+07-05,St. Louis Cardinals,Home,1:10 PM
+07-06,Texas Rangers,Home,6:40 PM
+07-07,Texas Rangers,Home,6:40 PM
+07-08,Texas Rangers,Home,1:10 PM
+07-10,New York Mets,Away,4:10 PM
+07-11,New York Mets,Away,4:10 PM
+07-12,New York Mets,Away,10:35 AM
+07-17,Pittsburgh Pirates,Away,3:35 PM
+07-18,Pittsburgh Pirates,Away,3:35 PM
+07-19,Pittsburgh Pirates,Away,10:35 AM
+07-20,Philadelphia Phillies,Away,10:35 AM
+07-21,Philadelphia Phillies,Away,3:45 PM
+07-22,Philadelphia Phillies,Away,3:45 PM
+07-24,Cincinnati Reds,Home,7:10 PM
+07-25,Cincinnati Reds,Home,6:40 PM
+07-26,Cincinnati Reds,Home,1:10 PM
+07-27,Milwaukee Brewers,Home,6:40 PM
+07-28,Milwaukee Brewers,Home,6:40 PM
+07-29,Milwaukee Brewers,Home,1:10 PM
+07-31,Los Angeles Angels,Away,6:38 PM
+08-01,Los Angeles Angels,Away,6:38 PM
+08-02,Los Angeles Angels,Away,1:07 PM
+08-03,Houston Astros,Away,11:10 AM
+08-04,Houston Astros,Away,5:10 PM
+08-05,Houston Astros,Away,5:10 PM
+08-07,Chicago Cubs,Home,7:10 PM
+08-08,Chicago Cubs,Home,6:40 PM
+08-09,Chicago Cubs,Home,1:10 PM
+08-10,Miami Marlins,Home,6:40 PM
+08-11,Miami Marlins,Home,6:40 PM
+08-12,Miami Marlins,Home,1:10 PM
+08-14,Texas Rangers,Away,5:05 PM
+08-15,Texas Rangers,Away,5:05 PM
+08-16,Texas Rangers,Away,11:35 AM
+08-17,Athletics,Away,6:40 PM
+08-18,Athletics,Away,6:40 PM
+08-19,Athletics,Away,12:35 PM
+08-21,Washington Nationals,Home,7:10 PM
+08-22,Washington Nationals,Home,6:40 PM
+08-23,Washington Nationals,Home,1:10 PM
+08-24,Atlanta Braves,Home,6:40 PM
+08-25,Atlanta Braves,Home,6:40 PM
+08-26,Atlanta Braves,Home,1:10 PM
+08-28,New York Yankees,Away,4:05 PM
+08-29,New York Yankees,Away,10:05 AM
+08-30,New York Yankees,Away,10:35 AM
+08-31,Boston Red Sox,Away,10:10 AM
+09-01,Boston Red Sox,Away,4:10 PM
+09-02,Boston Red Sox,Away,4:10 PM
+09-04,Houston Astros,Home,7:10 PM
+09-05,Houston Astros,Home,6:40 PM
+09-06,Houston Astros,Home,1:10 PM
+09-07,Los Angeles Angels,Home,6:40 PM
+09-08,Los Angeles Angels,Home,6:40 PM
+09-09,Los Angeles Angels,Home,1:10 PM
+09-11,San Francisco Giants,Away,6:45 PM
+09-12,San Francisco Giants,Away,1:05 PM
+09-13,San Francisco Giants,Away,1:05 PM
+09-14,Los Angeles Dodgers,Away,7:10 PM
+09-15,Los Angeles Dodgers,Away,7:10 PM
+09-16,Los Angeles Dodgers,Away,7:10 PM
+09-18,Texas Rangers,Home,7:10 PM
+09-19,Texas Rangers,Home,6:40 PM
+09-20,Texas Rangers,Home,1:10 PM
+09-21,Athletics,Home,6:40 PM
+09-22,Athletics,Home,6:40 PM
+09-23,Athletics,Home,1:10 PM
+09-25,Cleveland Guardians,Away,3:10 PM
+09-26,Cleveland Guardians,Away,3:10 PM
+09-27,Cleveland Guardians,Away,10:40 AM
